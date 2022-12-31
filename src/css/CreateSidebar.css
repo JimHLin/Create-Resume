@@ -1,0 +1,50 @@
+.Arrow-up{
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid grey;
+    margin-right: 5px;
+}
+
+.Arrow-up:hover{
+    border-bottom: 15px solid royalblue;
+}
+
+.Arrow-down{
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid grey;
+    margin-right: 5px;
+}
+
+.Arrow-down:hover{
+    border-top: 15px solid royalblue;
+}
+
+.Side-delete{
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.Side-delete:hover{
+    background-color: royalblue;
+    
+}
+
+.Create-sidebutton{
+    text-align: center;
+    padding: 0;
+}
+
+.Create-addbutton{
+    margin: 10px  0;
+}
+  
+.Save-button{
+    margin: 10px 0;
+}

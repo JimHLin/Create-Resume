@@ -2,37 +2,242 @@
   text-align: center;
 }
 
+@font-face {
+  font-family: 'bahnscript-light';
+  src: url('https://fonts.cdnfonts.com/s/21353/BAHNSCHRIFT 1.woff');
+}
+
+@font-face {
+  font-family: 'daytona-bold';
+  src: url('http://db.onlinewebfonts.com/t/3ce2a7c26210aa909d233b047dec6e1a.eot');
+}
+
+.Page{
+  margin: 5%;
+  color: rgb(61, 60, 60);
+  font-family: Calibri, sans-serif;
+  border: #61dafb;
+  border-width: 5px;
+  font-size: 13pt;
+}
+
+h1, h2, h3, h4{
+  color: #282c34;
+}
+
+.Sidebar {
+  font-weight: bold;
+  font-size: larger;
+  padding-top: 5%;
+}
+
+.Side-button{
+  color:rgb(24, 56, 151);
+  padding-top: 15px;
+  padding-bottom:15px;
+  font-family: 'daytona-bold', sans-serif;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.Sidebar-name{
+  font-size: 20pt;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'bahnscript-light', sans-serif ;
+}
+
+.Sidebar-title{
+  font-size: 15pt;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.Sidebar-item{
+  padding: 0, 50px;
+  text-align: left;
+}
+
+.Sidebar-create{
+  margin-top: 20px;
+}
+
+.Create-Modal{
+  position:absolute
+}
+
+.Profile-name{
+  font-size: 20pt;
+  font-family: 'bahnscript-light', sans-serif;
+  font-weight: bolder;
+}
+.Profile-title{
+  font-size: 16pt;
+  font-family: 'bahnscript-light', sans-serif;
+}
+
+.Intro-listhead{
+  font-size: 20pt;
+  font-weight: bolder;
+}
+
+.Intro-list{
+  width: 80%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.Profile li {
+  margin-top: 10px;
+}
+
+.Profile{
+  margin-bottom: 50px;
+}
+
+.Skills{
+  text-align: left;
+  display: block;
+}
+
+.Profile-info{
+  margin: auto 0;
+  padding-bottom: 30px;
+}
+
+.Introduction {
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+  overflow-wrap: normal;
+}
+
+.Profile-intro{
+  overflow-wrap: normal;
+}
+
+.Side-button:hover{
+  background-color: lightgreen;
+}
+
+.Created-list, .Created-paragraph, .Created-entry{
+  margin: 0 15% 5% 15%;
+  text-align: left;
+}
+
+.Created-list h2{
+  text-align: center;
+}
+
+.Entry-name{
+  font-weight: bold;
+}
+.Entry-name, .Entry-time{
+  margin-bottom: 10px;
+}
+
+.Create-form{
+  margin:0 auto;
+  width:80%;
+}
+
+.Intro-addbutton{
+  margin: 0;
+}
+
+.Skills{
+  text-align: center;
+}
+
+.Create-radio{
+  margin: 0 auto;
+  width:40%;
+}
+
+.Created-add{
+  margin: 20px 20px;
+}
+
+.Close-button{
+  margin-left: 80%;
+}
+
+.Created-item{
+  margin-bottom: 30px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Created-entrysumm{
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Created-entryname{
+  display: inline-block;
+  width: 45%;
+}
+
+.Created-entrydesc{  
+  display: inline-block;
+  width: 45%;
+}
+
+.Created-entrytime{
+  width: 45%;
+  margin: 10px auto;
+}
+
+.Created-entryintro{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.Intro-addbutton, .Created-entryadd, .Created-listadd{
+  margin: 10px 0;
+}
+
+.Error{
+  color: red;
+}
+
+.Button-create, .Button-edit{
+  margin-top: 5px;
+}
+
+
+@media screen and (min-width: 600px) {
+  .Page{
+    font-size: 15pt;
+  }
+
+  .Profile{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    vertical-align: middle;
+  }
+  .Profile-info{
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px){
+.Page{
+  margin-left:20%;
+}
+
+.Sidebar {
+  left: 0;
+  top: 0;
+  width: 20%;
+  position:fixed;
+  height:100%;
+  overflow-y: auto;
+}
+.Entry-intro{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: space-between;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
