@@ -280,7 +280,7 @@ function Home(){
     }else{
       setPages(staticPage);
     }
-}, [resumeId]);
+}, [resumeId, introductionId]);
 
   function getProcessedPage(name){
     console.log('getPage called');
