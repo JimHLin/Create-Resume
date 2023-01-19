@@ -207,6 +207,10 @@ h1, h2, h3, h4{
   margin-top: 5px;
 }
 
+body {
+  overflow: overlay;
+}
+
 
 @media screen and (min-width: 600px) {
   .Page{
@@ -225,6 +229,10 @@ h1, h2, h3, h4{
 @media screen and (min-width: 768px){
 .Page{
   margin-left:20%;
+}
+
+body {
+  scrollbar-gutter: stable both-edges;
 }
 
 .Sidebar {

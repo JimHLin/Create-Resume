@@ -115,7 +115,6 @@ function Item(props){
 
     const onSave = () => {
         setSaved(true);
-        console.log('onSave');
         props.onSave();
     }
 

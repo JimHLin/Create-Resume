@@ -1,6 +1,6 @@
 import Sidebar from './components/Sidebar';
 import CreateResume from './pages/CreateResume';
-import './App.css';
+import './css/App.css';
 import React, { useState, useEffect} from 'react';
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
 import { Accordion } from 'react-bootstrap';
@@ -104,10 +104,9 @@ function ProcessPage(props){
 
 function Home(){
   const {resumeId} = useParams();
-  const introductionId = uuidv4();
 
   const pageData = [{
-    uuid: introductionId,
+    uuid: uuidv4(),
     name: "Introduction",
     content: {
       name: '',
@@ -123,8 +122,6 @@ function Home(){
   const [pages, setPages] = useState(pageData);
   const [page,setPage] = useState(pages[0].uuid);
   const [mobile, setMobile] = useState(false);
-  console.log(pages);
-  console.log(page);
 
   function handleScreenChange(e) {
     if (e.matches) {
@@ -137,7 +134,7 @@ function Home(){
 
   useEffect(() => {
     const staticPage = [{
-      uuid: introductionId,
+      uuid: uuidv4(),
       name: "Introduction",
       content: {
         name: 'Jim Lin',
@@ -148,7 +145,7 @@ function Home(){
         list: ['Experienced in HTML, CSS, JavaScript',
          'Experienced in RESTful architecture, SQL & noSQL database structures ',
           'Experienced in Java, C++, OOP',
-          'Working knowledge of Elixir, Dart, Go, C, PHP',
+          'Working knowledge of Elixir, Dart, Go, C, PHP, .NET',
           'Experience working with Linus systems',
           'Web Dev frameworks such as JQuery, Node.js, React.js, Bootstrap',
           'Git version control and team Agile development',
@@ -210,6 +207,7 @@ function Home(){
             time: '',
             summ: ['Early version of site hosted on https://karmawellhealth.ca/', 
             'Functional company site that allows practitioners and patrons to connect, book appointments, as well as create/appoint/join custom sessions and bundles',
+            'Connect with third-party APIs for better user experience',
             'Work with startup business owner and teammates meeting for the first time',
             'Follow a strict schedule in five weeks to finish development, with team meetings 	every day, client and instructor meetings every week']
           }},{
@@ -256,6 +254,14 @@ function Home(){
             time: '',
             summ: ['Java application of a 3D chess game',
             'Simple gameplay loop with UI handled by JavaFX']
+          }},{
+            type: "entry",
+          content: {
+            name: '“Game of Life”',
+            desc: 'Academic Project, C++ application',
+            time: '',
+            summ: ['C++ application of a 3D chess game',
+            ' Customizable parameters to the game for different rulesets']
           }}
         ]
     }];
@@ -263,27 +269,24 @@ function Home(){
     mediaQuery.addEventListener("change", (e)=>{handleScreenChange(e)});
     handleScreenChange(mediaQuery);
     if(!!resumeId){
-      console.log(resumeId);
       onValue(ref(db, '/Resumes/'+resumeId), (snapshot) => {
         const resume = snapshot.val();
-        console.log(resume);
         if(!resume){
           setPages(staticPage);
         }else{
           setPages(resume);
           setPage(resume[0].uuid);
         }
-        // ...
       }, {
         onlyOnce: true
       });
     }else{
       setPages(staticPage);
+      setPage(staticPage[0].uuid);
     }
-}, [resumeId, introductionId]);
+}, [resumeId]);
 
   function getProcessedPage(name){
-    console.log('getPage called');
     for(var i = 0; i < resultPages.length; i++){
       if(resultPages[i].props.prePage.uuid === page){
         return resultPages[i];

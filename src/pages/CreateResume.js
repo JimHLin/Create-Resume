@@ -1,4 +1,4 @@
-import '../App.css';
+import '../css/App.css';
 import React, { useState, useEffect} from 'react';
 import {CreateSidebar} from '../components/CreateSidebar';
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
@@ -355,16 +355,13 @@ function CreateResume(){
       // Write the new post's data simultaneously in the posts list and the user's post list.
       const updates = {};
       updates['/Resumes/' + resumeId] = pages;
-      console.log('saved!')
       setShow(true);
       return update(ref(db), updates);
     }else{
       // Write the new post's data simultaneously in the posts list and the user's post list.
-      console.log('invalid log');
       const updates = {};
       updates['/Resumes/' + resumeId] = pages;
       updates['/EditCode/' + edit] = {resume: resumeId};
-      console.log('saved!')
       setShow(true);
       return update(ref(db), updates);
     }

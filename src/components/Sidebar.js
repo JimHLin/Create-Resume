@@ -33,7 +33,6 @@ function Item(props){
       }, {
         onlyOnce: true
       });
-      console.log('onSubmit')
     }
   
     return (
@@ -79,7 +78,6 @@ function Item(props){
     props.pages.map((pages, index)=> {
       return(<Item key={index} name={pages.name} change={()=>changePage(pages.uuid)} selected={props.selected===pages.uuid}></Item>)
     });
-    console.log(props.mobile);
     return(
       <div className="Sidebar">
         {props.mobile?<></>:
